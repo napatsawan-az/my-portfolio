@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { BsFillSunFill, BsMoonStarsFill } from "react-icons/bs";
+import placeholder from "./assets/placeholder.png";
 
 const App = () => {
   // Load the theme preference from localStorage, defaulting to "light"
@@ -22,8 +23,8 @@ const App = () => {
   };
 
   return (
-    <div className="h-screen max-w-screen-2xl bg-sky-200 dark:bg-neutral-800 font-Dosis">
-      <nav className="fixed top-5 left-1/2 transform -translate-x-1/2">
+    <div className="h-screen max-w-screen-2xl mx-auto bg-sky-200 dark:bg-neutral-800 font-Dosis text-lg">
+      <nav className="fixed top-5 left-1/2 transform -translate-x-1/2 z-10">
         {/* cloud-top */}
         <div className="flex justify-center items-end" data-aos="fade-down">
           <div className="h-[2rem] w-[4rem] bg-white dark:bg-neutral-500 rounded-t-full"></div>
@@ -33,20 +34,35 @@ const App = () => {
         </div>
 
         {/* cloud-menu */}
-        <div className="p-4 flex justify-between bg-white dark:bg-neutral-500 w-[310px] rounded-full shadow-lg shadow-sky-300 dark:shadow-gray-500"  data-aos="fade-down">
-          <a href="#home" className="hover:text-sky-700 font-medium dark:text-white">
+        <div
+          className="p-4 flex justify-between bg-white dark:bg-neutral-500 w-[310px] rounded-full shadow-lg shadow-sky-300 dark:shadow-gray-500"
+          data-aos="fade-down"
+        >
+          <a
+            href="#home"
+            className="hover:text-sky-500 font-medium dark:text-white dark:hover:text-yellow-200"
+          >
             Home
           </a>
           <div className="text-sky-500 dark:text-sky-200">|</div>
-          <a href="#about" className="hover:text-sky-700 font-medium dark:text-white">
+          <a
+            href="#about"
+            className="hover:text-sky-500 font-medium dark:text-white dark:hover:text-yellow-200"
+          >
             About
           </a>
           <div className="text-sky-500 dark:text-sky-200">|</div>
-          <a href="#project" className="hover:text-sky-700 font-medium dark:text-white">
+          <a
+            href="#project"
+            className="hover:text-sky-500 font-medium dark:text-white dark:hover:text-yellow-200"
+          >
             Project
           </a>
           <div className="text-sky-500 dark:text-sky-200">|</div>
-          <a href="#contact" className="hover:text-sky-700 font-medium dark:text-white">
+          <a
+            href="#contact"
+            className="hover:text-sky-500 font-medium dark:text-white dark:hover:text-yellow-200"
+          >
             Contact
           </a>
           <div className="text-sky-500 dark:text-sky-200">|</div>
@@ -60,13 +76,27 @@ const App = () => {
         </div>
       </nav>
 
-      <section className="pt-44">
-        <p>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
-          earum veritatis adipisci ex iure dolore aliquam architecto rem
-          temporibus non? Mollitia laudantium ullam eius tempora, eaque
-          voluptatum in nisi quis.
-        </p>
+      {/* Home Section */}
+      <section id="home" className="pt-44 p-7 flex flex-col md:items-center lg:flex-row lg:justify-center">
+        {/* Content */}
+        <div className="dark:text-white mb-5 lg:mr-10" data-aos="fade-right">
+          <h1 className="font-bold text-2xl mb-5">
+            Hello, I'm Napatsawan <br />
+            <span className="text-5xl dark:text-yellow-200">
+              Software Developer
+            </span>
+          </h1>
+          <p>
+            Passionate about crafting beautiful Full-Stack web experiences under
+            the Sky.
+          </p>
+        </div>
+
+        {/* Picture */}
+        <div data-aos="fade-left" className="flex max-w-[500px] max-h-[500px]">
+          <img src={placeholder} alt="Drawing in Progress" className="relative rounded-2xl object-contain" />
+          <p className="absolute top-1/2 w-full text-center text-gray-500">I'm currently working on a drawing. Please wait!</p>
+        </div>
       </section>
     </div>
   );
