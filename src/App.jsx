@@ -6,7 +6,7 @@ import {
   BsLinkedin,
   BsGithub,
 } from "react-icons/bs";
-import { HiMail } from "react-icons/hi";
+import { HiMail, HiExternalLink } from "react-icons/hi";
 import { AiFillHtml5 } from "react-icons/ai";
 import {
   BiLogoCss3,
@@ -17,6 +17,10 @@ import {
 } from "react-icons/bi";
 import { SiExpress, SiBootstrap, SiTailwindcss } from "react-icons/si";
 import placeholder from "./assets/placeholder.png";
+import colmarBlack from "./assets/project-colmar-black.svg";
+import colmarWhite from "./assets/project-colmar-white.svg";
+import sushi from "./assets/project-sushi.png";
+import rocketfit from "./assets/project-rocketfit.png";
 
 const App = () => {
   // Load the theme preference from localStorage, defaulting to "light"
@@ -118,7 +122,10 @@ const App = () => {
         className="pt-52 px-7 flex flex-col items-center md:px-10 lg:flex-row lg:justify-center lg:items-center"
       >
         {/* Content */}
-        <div className="dark:text-white mb-10 md:max-w-[500px] lg:mr-10" data-aos="fade-right">
+        <div
+          className="dark:text-white mb-10 md:max-w-[500px] lg:mr-10"
+          data-aos="fade-right"
+        >
           <h1 className="font-bold text-4xl mb-2">
             Hello, I'm Napatsawan <br />
             <span className="text-5xl leading-snug text-red-400 dark:text-yellow-200">
@@ -145,14 +152,20 @@ const App = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="pt-52 px-7 md:px-10 lg:flex lg:flex-row lg:justify-center">
+      <section
+        id="about"
+        className="pt-52 px-7 md:px-10 lg:flex lg:flex-row lg:justify-center"
+      >
         {/* Bio */}
         <div className="flex flex-col items-center lg:mr-20">
-          <h2 className="font-bold text-4xl mb-7 dark:text-yellow-200" data-aos="flip-up">
+          <h2
+            className="font-bold text-4xl mb-7 dark:text-yellow-200"
+            data-aos="flip-up"
+          >
             About
           </h2>
           <div
-            className="mb-10 p-8 md:max-w-[500px] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-100 rounded-3xl dark:text-white"
+            className="mb-10 p-8 md:max-w-[500px] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-200 rounded-3xl dark:text-white"
             data-aos="fade-right"
           >
             <h3 className="text-2xl font-medium mb-2">👋 Hi~</h3>
@@ -172,7 +185,7 @@ const App = () => {
             </p>
 
             {/* Contact */}
-            <div className="flex justify-around items-center pt-7 border-t-[1px] border-white dark:border-yellow-100">
+            <div className="flex justify-around items-center pt-7 border-t-[1px] border-white dark:border-yellow-200">
               <BsLinkedin className="text-3xl text-blue-500 dark:text-blue-400" />
               <BsGithub className="text-4xl text-purple-500 dark:text-purple-400" />
               <HiMail className="text-4xl text-red-500 dark:text-red-400" />
@@ -182,7 +195,10 @@ const App = () => {
 
         {/* Skill */}
         <div className="flex flex-col items-center">
-          <h2 className="font-bold text-4xl mb-7 dark:text-yellow-200" data-aos="flip-up">
+          <h2
+            className="font-bold text-4xl mb-7 dark:text-yellow-200"
+            data-aos="flip-up"
+          >
             Skills
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-5 md:w-[500px] lg:max-w-[500px] dark:text-white">
@@ -260,9 +276,125 @@ const App = () => {
           </div>
         </div>
       </section>
+
       {/* Project Section */}
-      <section id="project" className="pt-52 px-7 md:px-10 lg:min-h-screen">
-        <p>I'm Project</p>
+      <section
+        id="project"
+        className="pt-52 px-7 pb-10 md:px-10 min-h-screen flex flex-col items-center"
+      >
+        <h2
+          className="font-bold text-4xl mb-7 dark:text-yellow-200"
+          data-aos="flip-up"
+        >
+          Project
+        </h2>
+
+        <div className="lg:grid lg:grid-cols-3 gap-7">
+          {/* Colmar Academy */}
+          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-right">
+            <div className="flex justify-center items-center pt-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
+              {theme === "light" ? (
+                <img
+                  src={colmarBlack}
+                  alt="project colmar"
+                  className="w-[150px] h-[150px] object-contain"
+                />
+              ) : (
+                <img
+                  src={colmarWhite}
+                  alt="project colmar"
+                  className="w-[150px] h-[150px] object-contain"
+                />
+              )}
+            </div>
+            <div className="p-6 border-b-[1px] border-x-[1px] border-red-300 dark:border-yellow-200 rounded-b-3xl bg-white bg-opacity-30 dark:bg-opacity-10">
+              <h4 className="font-bold mb-2 text-red-400 dark:text-yellow-200">
+                Colmar Academy
+              </h4>
+              <p className="mb-5 text-xl lg:h-52">
+                I created the landing page for "Colmar Academy" while learning
+                HTML, vanilla CSS, and responsive design with media queries.
+                This project aimed to make informed design decisions regarding
+                color and typography.
+              </p>
+              <div className="pt-3 flex justify-between border-t-[1px] border-red-300 dark:border-yellow-200">
+                <div className="flex items-center">
+                  <AiFillHtml5 className="text-3xl text-orange-500" />
+                  <BiLogoCss3 className="text-3xl text-blue-500" />
+                </div>
+                <div className="flex items-center">
+                  <BsGithub className="text-2xl text-purple-500 mr-1" />
+                  <HiExternalLink className="text-3xl" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* Sushiman */}
+          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-up">
+            <div className="flex justify-center items-center pt-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
+              <img
+                src={sushi}
+                alt="project colmar"
+                className="w-[150px] h-[150px] object-contain"
+              />
+            </div>
+            <div className="p-6 border-b-[1px] border-x-[1px] border-red-300 dark:border-yellow-200 rounded-b-3xl bg-white bg-opacity-30 dark:bg-opacity-10">
+              <h4 className="font-bold mb-2 text-red-400 dark:text-yellow-200">
+                Sushiman
+              </h4>
+              <p className="mb-5 text-xl lg:h-52">
+                I built a modern, responsive HTML & CSS website with animations,
+                covering CSS variables, file structuring, animations, and clean
+                coding practices.
+              </p>
+              <div className="pt-3 flex justify-between border-t-[1px] border-red-300 dark:border-yellow-200">
+                <div className="flex items-center">
+                  <AiFillHtml5 className="text-3xl text-orange-500" />
+                  <BiLogoCss3 className="text-3xl text-blue-500" />
+                  <BiLogoJavascript className="text-3xl text-yellow-500" />
+                </div>
+                <div className="flex items-center">
+                  <BsGithub className="text-2xl text-purple-500 mr-1" />
+                  <HiExternalLink className="text-3xl" />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* Rocket Fit */}
+          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-left">
+            <div className="flex justify-center items-center pb-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
+              <img
+                src={rocketfit}
+                alt="project colmar"
+                className="w-[150px] h-[150px] object-contain"
+              />
+            </div>
+            <div className="p-6 border-b-[1px] border-x-[1px] border-red-300 dark:border-yellow-200 rounded-b-3xl bg-white bg-opacity-30 dark:bg-opacity-10">
+              <h4 className="font-bold mb-2 text-red-400 dark:text-yellow-200">
+                Rocket Fit
+              </h4>
+              <p className="mb-5 text-xl lg:h-52">
+                A collaborative MERN stack project for exercise tracking with
+                CRUD operations.
+              </p>
+              <div className="pt-3 flex justify-between border-t-[1px] border-red-300 dark:border-yellow-200">
+                <div className="flex items-center gap-1">
+                  <BiLogoMongodb className="text-3xl text-emerald-600" />
+                  <SiExpress className="text-3xl" />
+                  <BiLogoReact className="text-3xl text-cyan-500" />
+                  <BiLogoNodejs className="text-3xl text-lime-600" />
+                  <SiTailwindcss className="text-2xl text-sky-500" />
+                </div>
+                <div className="flex items-center">
+                  <BsGithub className="text-2xl text-purple-500 mr-1" />
+                  <HiExternalLink className="text-3xl" />
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
       {/* Contact Section
