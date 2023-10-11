@@ -123,7 +123,7 @@ const App = () => {
       >
         {/* Content */}
         <div
-          className="dark:text-white mb-10 md:max-w-[500px] lg:mr-10"
+          className="dark:text-white mb-16 md:max-w-[500px] lg:mr-10"
           data-aos="fade-right"
         >
           <h1 className="font-bold text-4xl mb-2">
@@ -136,6 +136,9 @@ const App = () => {
             Passionate about crafting beautiful Full-Stack web experiences under
             the Sky.
           </p>
+          <button className="mt-6 px-5 py-1 text-xl text-gray-500 dark:text-gray-300 hover:text-red-300 dark:hover:text-yellow-200 bg-white bg-opacity-30 rounded-full border-[1px] border-red-300 dark:border-yellow-200">
+            Download Resume
+          </button>
         </div>
 
         {/* Picture */}
@@ -165,7 +168,7 @@ const App = () => {
             About
           </h2>
           <div
-            className="mb-10 p-8 md:max-w-[500px] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-200 rounded-3xl dark:text-white"
+            className="mb-16 p-8 md:max-w-[500px] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-200 rounded-3xl dark:text-white"
             data-aos="fade-right"
           >
             <h3 className="text-2xl font-medium mb-2">👋 Hi~</h3>
@@ -291,7 +294,10 @@ const App = () => {
 
         <div className="lg:grid lg:grid-cols-3 gap-7">
           {/* Colmar Academy */}
-          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-right">
+          <article
+            className="md:max-w-[500px] lg:max-w-[400px] mb-8 dark:text-white"
+            data-aos="fade-right"
+          >
             <div className="flex justify-center items-center pt-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
               {theme === "light" ? (
                 <img
@@ -331,7 +337,10 @@ const App = () => {
           </article>
 
           {/* Sushiman */}
-          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-up">
+          <article
+            className="md:max-w-[500px] lg:max-w-[400px] mb-8 dark:text-white"
+            data-aos="fade-up"
+          >
             <div className="flex justify-center items-center pt-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
               <img
                 src={sushi}
@@ -363,7 +372,10 @@ const App = () => {
           </article>
 
           {/* Rocket Fit */}
-          <article className="md:max-w-[500px] lg:max-w-[400px] mb-7 dark:text-white" data-aos="fade-left">
+          <article
+            className="md:max-w-[500px] lg:max-w-[400px] mb-8 dark:text-white"
+            data-aos="fade-left"
+          >
             <div className="flex justify-center items-center pb-3 bg-red-300 bg-opacity-30 dark:bg-yellow-300 dark:bg-opacity-10 rounded-t-3xl border-red-300 dark:border-yellow-200 border-t-[1px] border-x-[1px]">
               <img
                 src={rocketfit}
