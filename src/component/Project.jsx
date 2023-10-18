@@ -21,7 +21,7 @@ const Project = () => {
       className="pt-52 px-7 pb-10 md:px-10 min-h-screen flex flex-col items-center"
     >
       <h2
-        className="font-bold text-4xl mb-7 dark:text-yellow-200"
+        className="font-bold text-4xl mb-10 dark:text-yellow-200"
         data-aos="flip-up"
       >
         - Project -
