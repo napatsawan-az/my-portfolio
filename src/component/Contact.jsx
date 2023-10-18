@@ -136,7 +136,7 @@ const Contact = () => {
             <input
               type="submit"
               value="Send"
-              className="mt-8 py-1 font-semibold rounded-md bg-red-200 hover:bg-red-300 dark:bg-yellow-100 dark:hover:bg-yellow-200 dark:text-black hover:cursor-pointer"
+              className="mt-8 py-1 font-semibold rounded-md bg-red-100 hover:bg-red-300 dark:bg-yellow-100 dark:hover:bg-yellow-200 dark:text-black hover:cursor-pointer"
             />
           </form>
           {alert && (

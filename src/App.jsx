@@ -4,6 +4,7 @@ import Home from "./component/Home";
 import About from "./component/About";
 import Project from "./component/Project";
 import Contact from "./component/Contact";
+import Footer from "./component/Footer";
 
 const App = () => {
   // Load the theme preference from localStorage, defaulting to "light"
@@ -17,6 +18,7 @@ const App = () => {
         <About />
         <Project />
         <Contact />
+        <Footer />
       </div>
     </div>
   );
