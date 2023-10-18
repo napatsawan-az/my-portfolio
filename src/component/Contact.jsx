@@ -1,6 +1,6 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { BsLinkedin, BsGithub } from "react-icons/bs";
+import { BsLinkedin, BsGithub, BsCheckCircle } from "react-icons/bs";
 import { HiMail } from "react-icons/hi";
 
 const initialFormState = {
@@ -13,6 +13,7 @@ const Contact = () => {
   const form = useRef();
   const [formData, setFormData] = useState(initialFormState);
   const [formErrors, setFormErrors] = useState({});
+  const [alert, setAlert] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +53,11 @@ const Contact = () => {
             console.log("message sent");
             clearForm();
             setFormErrors(!errors);
+
+            setAlert(true);
+            setTimeout(() => {
+              setAlert(false);
+            }, 2000)
           },
           (error) => {
             console.log(error.text);
@@ -133,6 +139,12 @@ const Contact = () => {
               className="mt-8 py-1 font-semibold rounded-md bg-red-200 hover:bg-red-300 dark:bg-yellow-100 dark:hover:bg-yellow-200 dark:text-black hover:cursor-pointer"
             />
           </form>
+          {alert && (
+            <div className="mt-4 p-1 flex justify-center items-center bg-green-400 rounded-md dark:text-black">
+              <BsCheckCircle />
+              <p className="ml-3 text-center ">Your message have been sent</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
