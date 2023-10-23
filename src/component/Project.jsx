@@ -47,6 +47,7 @@ const Project = () => {
             <p className="mb-5 text-xl md:h-40">
               A collaborative MERN stack project for exercise tracking with CRUD
               operations.
+              <br /><br /> <span className=" text-slate-400">-On development-</span>
             </p>
             <div className="pt-3 flex justify-between border-t-[1px] border-red-300 dark:border-yellow-200">
               <div className="flex items-center gap-1">
@@ -57,8 +58,8 @@ const Project = () => {
                 <SiTailwindcss className="text-2xl text-sky-500" />
               </div>
               <div className="flex items-center">
-                <BsGithub className="text-2xl text-purple-500 mr-1" />
-                <HiExternalLink className="text-3xl" />
+                {/* <BsGithub className="text-2xl text-purple-500 mr-1" /> */}
+                {/* <HiExternalLink className="text-3xl" /> */}
               </div>
             </div>
           </div>
@@ -92,8 +93,10 @@ const Project = () => {
                 <SiTailwindcss className="text-2xl text-sky-500" />
               </div>
               <div className="flex items-center">
-                <BsGithub className="text-2xl text-purple-500 mr-1" />
-                <HiExternalLink className="text-3xl" />
+                {/* <BsGithub className="text-2xl text-purple-500 mr-1" /> */}
+                <a href="https://bookstore-crud-web.vercel.app/" target="_blank">
+                  <HiExternalLink className="text-3xl" />
+                </a>
               </div>
             </div>
           </div>
@@ -127,8 +130,10 @@ const Project = () => {
                 <BiLogoJavascript className="text-3xl text-yellow-500" />
               </div>
               <div className="flex items-center">
-                <BsGithub className="text-2xl text-purple-500 mr-1" />
-                <HiExternalLink className="text-3xl" />
+                {/* <BsGithub className="text-2xl text-purple-500 mr-1" /> */}
+                <a href="https://sushiman-vanilla-css.vercel.app/" target="_blank">
+                  <HiExternalLink className="text-3xl" />
+                </a>
               </div>
             </div>
           </div>
@@ -160,8 +165,10 @@ const Project = () => {
                 <BiLogoCss3 className="text-3xl text-blue-500" />
               </div>
               <div className="flex items-center">
-                <BsGithub className="text-2xl text-purple-500 mr-1" />
-                <HiExternalLink className="text-3xl" />
+                {/* <BsGithub className="text-2xl text-purple-500 mr-1" /> */}
+                <a href="https://colmar-academy-20.vercel.app/" target="_blank">
+                  <HiExternalLink className="text-3xl" />
+                </a>
               </div>
             </div>
           </div>

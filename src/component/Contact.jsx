@@ -57,7 +57,7 @@ const Contact = () => {
             setAlert(true);
             setTimeout(() => {
               setAlert(false);
-            }, 2000)
+            }, 2000);
           },
           (error) => {
             console.log(error.text);
@@ -79,7 +79,7 @@ const Contact = () => {
         </h2>
 
         <div
-          className="p-8 w-[100%] md:w-[70%] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-200 dark:text-white rounded-3xl"
+          className="p-8 w-[100%] md:w-[70%] lg:w-[60%] bg-white bg-opacity-30 dark:bg-opacity-10 border-[1px] border-white dark:border-yellow-200 dark:text-white rounded-3xl"
           data-aos="fade-up"
         >
           <div className="flex flex-col pb-7 border-b-2 border-white dark:border-yellow-200">
@@ -91,14 +91,21 @@ const Contact = () => {
               </p>
               <p className="hidden sm:block">napatsawan.az@gmail.com</p>
             </div>
-            <div className="flex items-center mb-2">
-              <BsLinkedin className="mr-3 text-3xl text-blue-500 dark:text-blue-400" />
-              <p>napatsawan armin</p>
-            </div>
-            <div className="flex items-center mb-2">
-              <BsGithub className="mr-3 text-3xl text-purple-500 dark:text-purple-400" />
-              <p>napatsawan.az</p>
-            </div>
+            <a
+              href="https://www.linkedin.com/in/napatsawan-az/"
+              target="_blank"
+            >
+              <div className="flex items-center mb-2">
+                <BsLinkedin className="mr-3 text-3xl text-blue-500 dark:text-blue-400" />
+                <p>napatsawan armin</p>
+              </div>
+            </a>
+            <a href="https://github.com/napatsawan-az" target="_blank">
+              <div className="flex items-center mb-2">
+                <BsGithub className="mr-3 text-3xl text-purple-500 dark:text-purple-400" />
+                <p>napatsawan.az</p>
+              </div>
+            </a>
           </div>
           <form ref={form} onSubmit={sendEmail} className="flex flex-col mt-10">
             <label className="font-medium">Your Name</label>

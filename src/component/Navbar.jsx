@@ -1,5 +1,13 @@
 import { useState, useEffect } from "react";
 import {
+  Link as ScrollLink,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
+import {
   BsFillPersonFill,
   BsFillSunFill,
   BsMoonStarsFill,
@@ -8,8 +16,12 @@ import { AiFillHome } from "react-icons/ai";
 import { BiSolidContact } from "react-icons/bi";
 import { HiMiniPresentationChartLine } from "react-icons/hi2";
 
-const Navbar = ( {theme, setTheme}) => {
+const Navbar = ({ theme, setTheme }) => {
   const [activeLink, setActiveLink] = useState("home");
+
+  const handleSetActive = (to) => {
+    setActiveLink(to);
+  };
 
   useEffect(() => {
     // Add or remove the "dark" class based on the theme preference
@@ -22,6 +34,53 @@ const Navbar = ( {theme, setTheme}) => {
     // Store the theme preference in localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
+
+  useEffect(() => {
+    // Initialize scrollSpy and set the active link
+    scrollSpy.update();
+    handleSetActive("home");
+
+    // Event listener for scroll
+    Events.scrollEvent.register("begin", (to, element) => {
+      handleSetActive(to);
+    });
+
+    // Event listener for scroll
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+
+      // Determine the currently active section based on scroll position
+      const homeElement = document.getElementById("home");
+      const aboutElement = document.getElementById("about");
+      const projectElement = document.getElementById("project");
+      const contactElement = document.getElementById("contact");
+
+      if (homeElement && aboutElement && projectElement && contactElement) {
+        if (
+          scrollY >= homeElement.offsetTop &&
+          scrollY < aboutElement.offsetTop
+        ) {
+          handleSetActive("home");
+        } else if (
+          scrollY >= aboutElement.offsetTop &&
+          scrollY < projectElement.offsetTop
+        ) {
+          handleSetActive("about");
+        } else if (
+          scrollY >= projectElement.offsetTop &&
+          scrollY < contactElement.offsetTop
+        ) {
+          handleSetActive("project");
+        } else if (scrollY >= contactElement.offsetTop) {
+          handleSetActive("contact");
+        }
+      }
+    });
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+    };
+  }, []);
 
   const handleThemeSwitch = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -41,53 +100,65 @@ const Navbar = ( {theme, setTheme}) => {
 
           {/* cloud-menu */}
           <div className="p-4 flex justify-around bg-white dark:bg-neutral-600 w-[310px] border-none rounded-full shadow-lg shadow-sky-300 dark:shadow-neutral-500">
-            <a
-              href="#home"
+            <ScrollLink
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
               className={`mt-1 font-medium ${
                 activeLink === "home"
                   ? "text-sky-500 dark:text-yellow-200"
                   : "text-black hover:text-sky-500 dark:text-white dark:hover:text-yellow-200"
               }  `}
-              onClick={() => setActiveLink("home")}
             >
               <AiFillHome />
-            </a>
+            </ScrollLink>
             <div className="text-sky-500 dark:text-sky-200">|</div>
-            <a
-              href="#about"
+            <ScrollLink
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
               className={`mt-1 font-medium ${
                 activeLink === "about"
                   ? "text-sky-500 dark:text-yellow-200"
                   : "text-black hover:text-sky-500 dark:text-white dark:hover:text-yellow-200"
               }  `}
-              onClick={() => setActiveLink("about")}
             >
               <BsFillPersonFill />
-            </a>
+            </ScrollLink>
             <div className="text-sky-500 dark:text-sky-200">|</div>
-            <a
-              href="#project"
+            <ScrollLink
+              to="project"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
               className={`mt-1 font-medium ${
                 activeLink === "project"
                   ? "text-sky-500 dark:text-yellow-200"
                   : "text-black hover:text-sky-500 dark:text-white dark:hover:text-yellow-200"
               }  `}
-              onClick={() => setActiveLink("project")}
             >
               <HiMiniPresentationChartLine />
-            </a>
+            </ScrollLink>
             <div className="text-sky-500 dark:text-sky-200">|</div>
-            <a
-              href="#contact"
+            <ScrollLink
+              to="contact"
+              spy={true}
+              smooth={true}
+              offset={0}
+              duration={500}
               className={`mt-1 font-medium ${
                 activeLink === "contact"
                   ? "text-sky-500 dark:text-yellow-200"
                   : "text-black hover:text-sky-500 dark:text-white dark:hover:text-yellow-200"
               }  `}
-              onClick={() => setActiveLink("contact")}
             >
               <BiSolidContact />
-            </a>
+            </ScrollLink>
             <div className="text-sky-500 dark:text-sky-200">|</div>
             <button onClick={handleThemeSwitch}>
               {theme === "light" ? (

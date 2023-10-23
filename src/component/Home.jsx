@@ -1,5 +1,6 @@
 import placeholderLight from "../assets/placeholder-light.png";
 import placeholderDark from "../assets/placeholder-dark.png";
+import { Link } from "react-scroll";
 
 const Home = ({ theme }) => {
   const imageSrc = theme === "light" ? placeholderLight : placeholderDark;
@@ -21,9 +22,11 @@ const Home = ({ theme }) => {
           Passionate about crafting beautiful Full-Stack web experiences under
           the Sky.
         </p>
-        <button className="mt-6 px-5 py-1 text-xl font-semibold text-red-400 bg-white hover:text-white hover:bg-red-400 dark:text-yellow-200 dark:hover:text-neutral-800 dark:hover:bg-yellow-200  bg-opacity-30 rounded-full border-[1px] border-red-400 dark:border-yellow-200">
-          Contact Me
-        </button>
+        <Link to="contact" spy={true} smooth={true} offset={0} duration={500}>
+          <button className="mt-6 px-5 py-1 text-xl font-semibold text-red-400 bg-white hover:text-white hover:bg-red-400 dark:text-yellow-200 dark:hover:text-neutral-800 dark:hover:bg-yellow-200  bg-opacity-30 rounded-full border-[1px] border-red-400 dark:border-yellow-200">
+            Contact Me
+          </button>
+        </Link>
       </div>
 
       {/* Picture */}
