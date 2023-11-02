@@ -45,9 +45,7 @@ const Project = () => {
               Rocket Fit
             </h4>
             <p className="mb-5 text-xl md:h-40">
-              A collaborative MERN stack project for exercise tracking with CRUD
-              operations.
-              <br /><br /> <span className=" text-slate-400">-On development-</span>
+              A collaborative MERN stack project combining exercise tracking and social features for a holistic fitness experience.
             </p>
             <div className="pt-3 flex justify-between border-t-[1px] border-red-300 dark:border-yellow-200">
               <div className="flex items-center gap-1">
@@ -59,7 +57,9 @@ const Project = () => {
               </div>
               <div className="flex items-center">
                 {/* <BsGithub className="text-2xl text-purple-500 mr-1" /> */}
-                {/* <HiExternalLink className="text-3xl" /> */}
+                <a href="https://rocket-fit.vercel.app/" target="_blank">
+                  <HiExternalLink className="text-3xl" />
+                </a>
               </div>
             </div>
           </div>
